@@ -71,7 +71,7 @@ public class Sqs extends Collector {
 
 				for (String key : qAttributes.keySet()) {
 					GaugeMetricFamily labeledGauge = new GaugeMetricFamily(
-							String.format("sqs_%s", key.toLowerCase().trim()),
+							String.format(queueName+"_sqs_%s", key.toLowerCase().trim()),
 							attributeDescriptions.get(key),
 							Arrays.asList("queue"));
 					

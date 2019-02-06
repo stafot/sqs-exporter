@@ -29,3 +29,8 @@ hs_err_pid*
 # Maven build artifacts
 target
 dependency-reduced-pom.xml
+
+#idea files
+*.iml
+.idea/
+.idea/*

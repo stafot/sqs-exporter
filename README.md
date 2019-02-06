@@ -9,9 +9,9 @@ docker build --tag sqs-exporter  .
 
 ### Exported Metrics
 
-| Metric  | Labels |
-| ------  | ------ |
-| sqs_ATTRIBUTE_NAME | Queue Name |
+| Metric                       | Labels |
+| ---------------------------- | ------ |
+| queueName_sqs_ATTRIBUTE_NAME | Queue Name |
 
 
 

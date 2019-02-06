@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-RUN apk add --no-cache openjdk8-jre
+RUN apk add --no-cache openjdk8-jre curl
 
 ENV MAVEN_VERSION=3.5.4 \
     MAVEN_SHA1=22cac91b3557586bb1eba326f2f7727543ff15e3
