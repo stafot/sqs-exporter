@@ -65,13 +65,14 @@ public class Sqs extends Collector {
 			for (String qUrl : queueUrls) {
 				String[] tokens = qUrl.split("\\/");
 				String queueName = tokens[tokens.length - 1];
+				String trimmedQueueName = queueName.replace(".fifo", "");
 
 				GetQueueAttributesResult attr = sqs.getQueueAttributes(qUrl, attributeNames);
 				Map<String, String> qAttributes = attr.getAttributes();
 
 				for (String key : qAttributes.keySet()) {
 					GaugeMetricFamily labeledGauge = new GaugeMetricFamily(
-							String.format(queueName+"_sqs_%s", key.toLowerCase().trim()),
+							String.format(trimmedQueueName+"_sqs_%s", key.toLowerCase().trim()),
 							attributeDescriptions.get(key),
 							Arrays.asList("queue"));
 					
